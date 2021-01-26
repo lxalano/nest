@@ -1,8 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { prop, getModelForClass } from '@typegoose/typegoose';
+import * as mongoose from 'mongoose';
 
 async function bootstrap() {
+
   const app = await NestFactory.create(AppModule);
   //swagger文档
   const config = new DocumentBuilder()
